@@ -1,10 +1,10 @@
 import cxs from 'cxs'
 import Oy from 'oy-vey'
 import React from 'react'
-import styles from './styles'
-import Header from './components/header'
-import Content from './components/content'
-import Footer from './components/footer'
+import styles from '../styles'
+import Header from '../components/header'
+import Content from '../components/content'
+import Footer from '../components/footer'
 
 const {Table, TBody, TR, TD} = Oy;
 

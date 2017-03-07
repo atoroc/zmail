@@ -7,7 +7,7 @@
     "start": "npm run compile; npm run export",
     "watch": "onchange './app.js' 'src/**/*' -- npm run start",
     "export": "node lib/export.js",
-    "compile": "babel src --ignore node_modules,dist,emails --out-dir lib --presets es2015,stage-2,react,babel-polyfill --plugins syntax-decorators"
+    "compile": "babel src --ignore node_modules,dist --out-dir lib --presets es2015,stage-2,react,babel-polyfill --plugins syntax-decorators"
   },
   "repository": {
     "type": "git",
