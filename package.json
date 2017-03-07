@@ -1,0 +1,44 @@
+{
+  "name": "lumi-email",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run compile; npm run export",
+    "watch": "onchange './app.js' 'src/**/*' -- npm run start",
+    "export": "node lib/export.js",
+    "compile": "babel src --ignore node_modules,dist,emails --out-dir lib --presets es2015,stage-2,react,babel-polyfill --plugins syntax-decorators"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumihq/lumi-email.git"
+  },
+  "keywords": [],
+  "author": "David Hemphill <davidlee.hemphill@gmail.com> (http://davidhemphill.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lumihq/lumi-email/issues"
+  },
+  "homepage": "https://github.com/lumihq/lumi-email#readme",
+  "devDependencies": {
+    "babel-cli": "~6.22.2",
+    "babel-core": "~6.22.1",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-syntax-decorators": "^6.13.0",
+    "babel-plugin-transform-runtime": "~6.15.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "eslint-plugin-react": "^6.9.0",
+    "express": "^4.15.0",
+    "oy-vey": "^0.8.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "dependencies": {
+    "cxs": "^3.0.4",
+    "inline-css": "^2.2.2",
+    "onchange": "^3.2.1"
+  }
+}
