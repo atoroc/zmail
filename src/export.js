@@ -8,7 +8,7 @@ import generateCustomTemplate from './lib/generateCustomTemplate'
 const emails = [
     {
         component: <HelloWorldEmail />,
-        outputPath: './output/helloWorld.html',
+        fileName: 'helloWorld.html',
         options: {
             title: 'Welcome to Lumi!',
             headCSS: 'body { background-color: #f7f6f5; }',
@@ -17,7 +17,7 @@ const emails = [
     },
     {
         component: <GoodbyeWorldEmail />,
-        outputPath: './output/goodbyeWorld.html',
+        fileName: 'goodbyeWorld.html',
         options: {
             title: 'Goodbye Lumi!',
             headCSS: 'body { background-color: #f7f6f5; }',
@@ -27,11 +27,7 @@ const emails = [
 ]
 
 emails.forEach((email) => {
-    const html = Oy.renderTemplate(email.component,
-        email.options,
-        (templateOptions) => generateCustomTemplate(templateOptions)
-    )
-
-    writeFile(email.outputPath, html)
+    const html = Oy.renderTemplate(email.component, email.options, (templateOptions) => generateCustomTemplate(templateOptions))
+    writeFile(email.fileName, html)
     console.log("Finished!")
 })
