@@ -24,7 +24,7 @@ export default React.createClass({
                                 <CTAButton href={'http://lumi.com/account'} buttonText={'View your account'} />
                                 <p style={styles.paragraph}>Hey there!</p>
                                 <p style={styles.paragraph}>Thanks for joining Lumi. We're working hard to add new ways you can turn your logo and digital designs into physical things. If you have any suggestions don't hesitate to reply.</p>
-                                <p style={styles.paragraph}>We're also regularly posting news and inspirational images on Instagram. We'd love to see you there <a style={{color: styles.brandColor}} href="https://instagram.com/lumi/">instagram.com/lumi</a></p>
+                                <p style={styles.paragraph}>We're also regularly posting news and inspirational images on Instagram. We'd love to see you there <a style={{color: styles.brandColor}} href="https://instagram.com/lumi/">instagram.com/lumi</a>.</p>
                                 <p style={styles.paragraph}>Thanks,<br />Shayna Brody, Customer Service</p>
                             </Content>
                             <SocialLinks />
