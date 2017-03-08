@@ -1,12 +1,8 @@
-import Oy from 'oy-vey';
 import React from 'react'
 import styles from '../styles'
-
-const {Table, TBody, TR, TD} = Oy;
+import {Table, TBody, TR, TD} from 'oy-vey';
 
 const wrapper = {
-    // backgroundColor: '#222222',
-    // color: '#ffffff',
     borderTop: '1px solid rgba(0, 0, 0, 0.1)',
     padding: '20px 0',
 }

@@ -1,14 +1,12 @@
-import Oy from 'oy-vey';
 import React from 'react'
 import styles from '../styles'
-
-const {Table, TBody, TR, TD} = Oy;
+import {Table, TBody, TR, TD} from 'oy-vey';
 
 const wrapper = {
-    padding: '60px 0',
+    padding: '0px 0',
 }
 
-const header = {
+const contentStyles = {
     width: styles.width,
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -16,7 +14,7 @@ const header = {
 
 export default (props) => {
     return (
-        <Table width="100%" style={header}>
+        <Table width="100%" style={contentStyles}>
             <TBody>
                 <TR>
                     <TD style={wrapper}>

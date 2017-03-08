@@ -1,34 +1,18 @@
-import Oy from 'oy-vey';
 import React from 'react'
 import styles from '../styles'
-
-const {Table, TBody, TR, TD} = Oy;
-
-const wrapper = {
-    backgroundColor: '#FF4E31',
-    color: '#FFFFFF',
-    padding: '8px 0',
-}
-
-const header = {
-    width: styles.width,
-    marginLeft: 'auto',
-    marginRight: 'auto',
-}
-
-const brand = {
-    fontFamily: styles.fontFamily
-}
+import {Table, TBody, TR, TD} from 'oy-vey';
 
 export default (props) => {
     return (
         <Table width="100%">
             <TBody>
                 <TR>
-                    <TD style={wrapper}>
-                        <div style={header}>
-                            <p style={brand}>Lumi</p>
-                        </div>
+                    <TD>
+                        <p style={{margin: '30px 0', textAlign: 'center'}}>
+                            <a href="http://lumi.com">
+                                <img src={styles.logo.src} width="100px" height="34px" />
+                            </a>
+                        </p>
                     </TD>
                 </TR>
             </TBody>
