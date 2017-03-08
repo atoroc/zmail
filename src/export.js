@@ -3,8 +3,7 @@ import React from 'react'
 import writeFile from './lib/writeFile'
 import WelcomeUserEmail from './emails/welcomeUser'
 import ResetPasswordEmail from './emails/resetPassword'
-import HelloWorldEmail from './emails/helloWorld'
-import GoodbyeWorldEmail from './emails/goodbyeWorld'
+import OrderCancellationEmail from './emails/orderCancellation'
 import generateCustomTemplate from './lib/generateCustomTemplate'
 
 const emails = [
@@ -24,6 +23,15 @@ const emails = [
             title: 'Welcome to Lumi!',
             headCSS: 'body { background-color: #f7f6f5; }',
             previewText: 'Welcome to Lumi!'
+        }
+    },
+    {
+        component: <OrderCancellationEmail />,
+        fileName: 'orderCancellation.html',
+        options: {
+            title: 'Your order has been cancelled.',
+            headCSS: 'body { background-color: #f7f6f5; }',
+            previewText: 'Your order has been cancelled.'
         }
     },
 ]

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles'
+import Layout from '../components/layout'
 import Header from '../components/header'
 import Content from '../components/content'
 import SocialLinks from '../components/social'
@@ -14,28 +15,22 @@ const appStyles = {
 export default React.createClass({
     render() {
         return (
-            <Table width="100%" style={appStyles}>
-                <TBody>
-                    <TR>
-                        <TD>
-                            <Header />
-                            <Content>
-                                <h2 style={styles.h1}>Reset your password</h2>
-                                <CTAButton href={'http://lumi.com/resetPassword'} buttonText={'Reset Password'} />
-                                <p style={styles.paragraph}>Looks like you requested a password reset. Just follow this link to complete the process:</p>
-                                <p style={styles.paragraph}>
-                                    <a href="{'{% resetLink %}'}" style={{color: styles.brandColor}}>
-                                        {'{% resetLink %}'}
-                                    </a>
-                                </p>
-                                <p style={styles.paragraph}>If you did not request a password reset, you can safely disregard this email.</p>
-                                <p style={styles.paragraph}>Thanks, Lumi</p>
-                            </Content>
-                            <SocialLinks />
-                        </TD>
-                    </TR>
-                </TBody>
-            </Table>
+            <Layout>
+                <Header />
+                <Content>
+                    <h2 style={styles.h1}>Reset your password</h2>
+                    <CTAButton href={'http://lumi.com/resetPassword'} buttonText={'Reset Password'} />
+                    <p style={styles.paragraph}>Looks like you requested a password reset. Just follow this link to complete the process:</p>
+                    <p style={styles.paragraph}>
+                        <a href="{'{% resetLink %}'}" style={{color: styles.brandColor}}>
+                            {'{% resetLink %}'}
+                        </a>
+                    </p>
+                    <p style={styles.paragraph}>If you did not request a password reset, you can safely disregard this email.</p>
+                    <p style={styles.paragraph}>Thanks, Lumi</p>
+                </Content>
+                <SocialLinks />
+            </Layout>
         );
     }
 })

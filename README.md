@@ -12,12 +12,15 @@ npm install
 
 ## Creating New Emails
 
+Lumi Email uses [Oy](https://github.com/revivek/oy), which provides some components to make it easier to build emails. You can use the built-in table components from Oy to create tables which are validated against email best practices. It also handles transclusion of the output into a base template.
+
 To create a new email, simply create a new React component inside a separate file. Give it a descriptive name like `welcomeEmail.js` and place it in `src/emails`.
 
 ```js
 // welcomeEmail.js
 import React from 'react'
 import styles from '../styles'
+import Layout from '../components/layout'
 import Header from '../components/header'
 import Content from '../components/content'
 import Footer from '../components/footer'
@@ -32,25 +35,19 @@ const appStyles = {
 export default React.createClass({
     render() {
         return (
-            <Table width="100%" style={appStyles}>
-                <TBody>
-                    <TR>
-                        <TD>
-                            <Header/>
-                            <Content>
-                                Your Content Here!
-                            </Content>
-                            <Footer/>
-                        </TD>
-                    </TR>
-                </TBody>
-            </Table>
+            <Layout>
+                <Header/>
+                <Content>
+                    Your Content Here!
+                </Content>
+                <Footer/>
+            </Layout>
         );
     }
 })
 ```
 
-Lumi Email uses [Oy](https://github.com/revivek/oy), which provides some components to make it easier to build emails. It also handles transclusion of the output into a base template.
+> Note: if you need a layout which is different than the one provided in the `Layout` component, you can opt to make your own.
 
 ## Registering a New Email For Compilation
 

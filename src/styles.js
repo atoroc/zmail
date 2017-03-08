@@ -1,6 +1,7 @@
 export default {
     width: '560px',
     fontFamily: "'Proxima Nova Soft','Proxima Nova','Avenir','Helvetica Neue','Helvetica',Arial,sans-serif",
+    fontSize: '14px',
     brandColor: '#ff4e31',
 
     logo: {
@@ -39,7 +40,7 @@ export default {
     paragraph: {
        margin: 0,
        padding: 0,
-       fontFamily: "'Proxima Nova Soft','Proxima Nova','Avenir','Helvetica Neue','Helvetica',Arial,sans-serif",
+       fontFamily: "Proxima Nova Soft, Proxima Nova, Avenir, Helvetica Neue, Helvetica, Arial, sans-serif",
        marginBottom: '7px',
        fontWeight: 'normal',
        fontSize: '14px',
