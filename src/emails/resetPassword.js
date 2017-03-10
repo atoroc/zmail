@@ -19,11 +19,11 @@ export default React.createClass({
                 <Header />
                 <Content>
                     <h2 style={styles.h1}>Reset your password</h2>
-                    <CTAButton href={'http://lumi.com/resetPassword'} buttonText={'Reset Password'} />
+                    <CTAButton href={this.props.data.resetLink} buttonText={'Reset Password'} />
                     <p style={styles.paragraph}>Looks like you requested a password reset. Just follow this link to complete the process:</p>
                     <p style={styles.paragraph}>
-                        <a href="{'{% resetLink %}'}" style={{color: styles.brandColor}}>
-                            {'{% resetLink %}'}
+                        <a href={this.props.data.resetLink} style={{color: styles.brandColor}}>
+                            {this.props.data.resetLink}
                         </a>
                     </p>
                     <p style={styles.paragraph}>If you did not request a password reset, you can safely disregard this email.</p>
