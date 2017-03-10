@@ -12,13 +12,18 @@ const appStyles = {
     fontFamily: styles.fontFamily,
 }
 
-export default React.createClass({
-    getDefaultProps() {
-        return {
-            firstName: 'there'
-        }
+export default class WelcomeUser extends React.Component {
+    static defaultProps = {
+        firstName: 'there'
     }
-    render() {
+
+    static options = {
+        title: 'Welcome to Lumi!',
+        headCSS: 'body { background-color: #f7f6f5; }',
+        previewText: 'Welcome to Lumi!'
+    }
+
+    render () {
         return (
             <Layout>
                 <Header />
@@ -34,4 +39,4 @@ export default React.createClass({
             </Layout>
         );
     }
-})
+}

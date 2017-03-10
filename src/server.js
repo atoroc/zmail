@@ -20,17 +20,15 @@ server.use(
 );
 
 server.get("/:template.:type", (req, res) => {
-  const email = _.find(emails, email => {
-    return email.fileName == req.params.template + ".html";
-  });
+  const Email = emails[req.params.template]
 
   const { query, body } = req;
   const data = Object.assign({}, query, body);
 
-  if (email) {
+  if (Email) {
     const html = Oy.renderTemplate(
-      <email.component {...data} />,
-      email.options,
+      <Email {...data} />,
+      Email.options,
       templateOptions => generateCustomTemplate(templateOptions),
     );
 
@@ -38,8 +36,15 @@ server.get("/:template.:type", (req, res) => {
     res.set("Pragma", "no-cache");
     res.set("Expires", "0");
     res.send(html);
+  } else {
+    res.status(404);
+    res.send({error: 'Template not found'})
   }
 });
+
+server.get('/templates', (req, res) => {
+  res.send(Object.keys(emails));
+})
 
 server.listen(server.get("port"), () => {
   console.log("Node server is running on port", server.get("port"));
