@@ -22,11 +22,13 @@ export default class ShipmentConfirmation extends React.Component {
         orderNumber: '1234567890',
         carrier: 'USPS',
         trackingUrl: 'http://yahoo.com',
-        trackingNumber: '',
-        destinationCountry: 'England',
+        destinationCountry: 'UK',
         estimatedDeliveryDate: 'Estimated Delivery Date',
         trackingNumbers: [
-            'JDJF643573878SGJK'
+            {
+                trackingUrl: 'trackingUrlHere',
+                trackingNumber: 'JDJF643573878SGJK'
+            }
         ],
         orderItems: [
             {
@@ -48,6 +50,24 @@ export default class ShipmentConfirmation extends React.Component {
                         option4: 'Option 4',
                     }
                 }
+            },
+            {
+                value: {
+                    thumbnailUrl: 'https://www.gravatar.com/avatar/2821f93cef33ccd01b1262ac41f87d9c?s=80',
+                    orderItem: {
+                        orderedDesign: '',
+                        orderedBuild: '',
+                        quantity: 68,
+                    },
+                    productGroup: {
+                        title: 'Gummed Paper Tape'
+                    },
+                    product: '',
+                    buildOptions: {
+                        option1: 'Option 1',
+                        option3: 'Option 3',
+                    }
+                }
             }
         ]
     }
@@ -56,8 +76,10 @@ export default class ShipmentConfirmation extends React.Component {
         orderNumber: React.PropTypes.string.isRequired,
         carrier: React.PropTypes.string.isRequired,
         trackingUrl: React.PropTypes.string.isRequired,
-        trackingNumber: React.PropTypes.string.isRequired,
+        trackingNumbers: React.PropTypes.array.isRequired,
         destinationCountry: React.PropTypes.string.isRequired,
+        estimatedDeliveryDate: React.PropTypes.string.isRequired,
+        orderItems: React.PropTypes.array.isRequired,
     }
 
     static options = {
@@ -77,9 +99,26 @@ export default class ShipmentConfirmation extends React.Component {
     renderTrackingNumbers() {
         if (this.props.carrier && this.props.trackingNumbers) {
             return (
-                <p style={styles.paragraph}>
-                    They are being shipped via {this.props.carrier} with tracking numbers:
-                </p>
+                <div style={{marginBottom: '30px'}}>
+                    <p style={styles.paragraph}>
+                        They are being shipped via {this.props.carrier} with tracking number(s):
+                    </p>
+
+                    <ul>
+                        {
+                            this.props.trackingNumbers.map((number) => {
+                                return (
+                                    <li>
+                                        <a href={number.trackingUrl} style={{'color': styles.brandColor}}>
+                                            {number.trackingNumber}
+                                        </a>
+                                    </li>
+                                )
+                            })
+                        }
+
+                    </ul>
+                </div>
             )
         }
     }
@@ -119,11 +158,12 @@ export default class ShipmentConfirmation extends React.Component {
                         return (
                             <TR>
                                 <TD align="center" style={productTableTdStyles}>
-                                    <img src={item.value.thumbnailUrl} style={{ maxWidth: '50px', maxHeight: '50px', width: 'auto', marginTop: '4px'}} />
+                                    <img src={item.value.thumbnailUrl} width="50" height="50" style={{ maxWidth: '50px', maxHeight: '50px', width: 'auto', marginTop: '4px'}} />
                                 </TD>
                                 <TD style={{...productTableTdStyles, ...{padding: '7px 7px 0'}}}>
                                     <p style={styles.paragraph}>
-                                        {item.value.orderItem.quantity} &times;
+                                        {item.value.orderItem.quantity}
+                                        &nbsp;&times;&nbsp;
                                         {item.value.productGroup.title}
                                         {item.value.buildOptions.option1 ? ` / ${item.value.buildOptions.option1}`: ''}
                                         {item.value.buildOptions.option4 ? ` / ${item.value.buildOptions.option4}`: ''}
