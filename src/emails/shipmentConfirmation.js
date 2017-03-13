@@ -91,7 +91,7 @@ export default class ShipmentConfirmation extends React.Component {
                     <b>Please note:</b> once your package arrives in {this.props.country} it may take 10-14 business days for it to clear customs.
 
                     {this.props.carrier == 'USPS'
-                        ? <span> If you haven't received your package by then, please contact your local post office with your tracking number to find out if they are holding your package.</span>
+                        ? <span> If you haven&rsquo;t received your package by then, please contact your local post office with your tracking number to find out if they are holding your package.</span>
                         : ''
                     }
                 </p>
@@ -121,7 +121,7 @@ export default class ShipmentConfirmation extends React.Component {
                                 <TD align="center" style={productTableTdStyles}>
                                     <img src={item.value.thumbnailUrl} style={{ maxWidth: '50px', maxHeight: '50px', width: 'auto', marginTop: '4px'}} />
                                 </TD>
-                                <TD style={{productTableTdStyles, ...{padding: '7px 7px 0'}}}>
+                                <TD style={{...productTableTdStyles, ...{padding: '7px 7px 0'}}}>
                                     <p style={styles.paragraph}>
                                         {item.value.orderItem.quantity} &times;
                                         {item.value.productGroup.title}
