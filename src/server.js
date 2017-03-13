@@ -1,4 +1,3 @@
-import _ from "lodash";
 import Oy from "oy-vey";
 import React from "react";
 import emails from "./emails";
