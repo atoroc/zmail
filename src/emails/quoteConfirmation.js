@@ -6,11 +6,6 @@ import Content from '../components/content'
 import SocialLinks from '../components/social'
 import CTAButton from '../components/ctaButton'
 
-const appStyles = {
-    backgroundColor: '#f7f6f5',
-    fontFamily: s.fontFamily,
-}
-
 export default class QuoteConfirmation extends React.Component {
     static defaultProps = {
         // name: 'David Hemphill',
@@ -53,34 +48,48 @@ export default class QuoteConfirmation extends React.Component {
                                 <td style={s.tableData}><b>Email</b></td>
                                 <td style={s.tableData}>{this.props.email}</td>
                             </tr>
-                            <tr>
-                                <td style={s.tableData}><b>Product</b></td>
-                                <td style={s.tableData}>{this.props.product}</td>
-                            </tr>
-                            <tr>
+                            { this.props.product &&
+                                <tr>
+                                    <td style={s.tableData}><b>Product</b></td>
+                                    <td style={s.tableData}>{this.props.product}</td>
+                                </tr>
+                            }
+                            { this.props.size &&
+                           <tr>
                                 <td style={s.tableData}><b>Size</b></td>
                                 <td style={s.tableData}>{this.props.size}</td>
                             </tr>
+                            }
+                            { this.props.colorCount &&
                             <tr>
                                 <td style={s.tableData}><b>Colors</b></td>
                                 <td style={s.tableData}>{this.props.colorCount}</td>
                             </tr>
+                            }
+                            { this.props.currentPrice &&
                             <tr>
                                 <td style={s.tableData}><b>Budget</b></td>
                                 <td style={s.tableData}>{this.props.currentPrice}</td>
                             </tr>
+                            }
+                            { this.props.quantity &&
                             <tr>
                                 <td style={s.tableData}><b>Quantity</b></td>
                                 <td style={s.tableData}>{this.props.quantity}</td>
                             </tr>
+                            }
+                            { this.props.needByDate &&
                             <tr>
                                 <td style={s.tableData}><b>Need by date</b></td>
                                 <td style={s.tableData}>{this.props.needByDate}</td>
                             </tr>
+                            }
+                            { this.props.additionalSpecs &&
                             <tr>
                                 <td style={s.tableData}><b>Notes</b></td>
                                 <td style={s.tableData}>{this.props.additionalSpecs}</td>
                             </tr>
+                            }
                         </tbody>
                     </table>
                 </Content>
