@@ -7,62 +7,6 @@ import SocialLinks from '../components/social'
 import CTAButton from '../components/ctaButton'
 
 export default class ShipmentConfirmation extends React.Component {
-    static defaultProps = {
-        orderNumber: '1234567890',
-        carrier: 'USPS',
-        trackingUrl: 'http://yahoo.com',
-        destinationCountry: 'UK',
-        estimatedDeliveryDate: 'estimated delivery date goes here',
-        trackingNumbers: [
-            {
-                trackingUrl: 'trackingUrlHere',
-                trackingNumber: 'JDJF643573878SGJK'
-            }
-        ],
-        orderItems: [
-            {
-                id: '0987654321',
-                value: {
-                    thumbnailUrl: 'https://www.gravatar.com/avatar/2821f93cef33ccd01b1262ac41f87d9c?s=80',
-                    orderItem: {
-                        orderedDesign: '',
-                        orderedBuild: '',
-                        quantity: 40,
-                    },
-                    productGroup: {
-                        title: 'Standard Mailer Boxes'
-                    },
-                    product: '',
-                    buildOptions: {
-                        option1: 'Option 1',
-                        option2: 'Option 2',
-                        option3: 'Option 3',
-                        option4: 'Option 4',
-                    }
-                }
-            },
-            {
-                id: '1234567890',
-                value: {
-                    thumbnailUrl: 'https://www.gravatar.com/avatar/2821f93cef33ccd01b1262ac41f87d9c?s=80',
-                    orderItem: {
-                        orderedDesign: '',
-                        orderedBuild: '',
-                        quantity: 68,
-                    },
-                    productGroup: {
-                        title: 'Gummed Paper Tape'
-                    },
-                    product: '',
-                    buildOptions: {
-                        option1: 'Option 1',
-                        option3: 'Option 3',
-                    }
-                }
-            }
-        ]
-    }
-
     static propTypes = {
         orderNumber: React.PropTypes.string.isRequired,
         carrier: React.PropTypes.string.isRequired,
