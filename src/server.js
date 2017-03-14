@@ -18,6 +18,15 @@ server.use(
   }),
 );
 
+const origError = console.error
+console.error = function propErrorHandler (...args) {
+  if (typeof args[0] === 'string' && args[0].indexOf('Warning: Failed prop type') > -1) {
+    throw new Error(args[0])
+  } else {
+    origError.apply(console, args)
+  }
+}
+
 server.get("/:template.:type", (req, res) => {
   const Email = emails[req.params.template]
 
@@ -25,16 +34,22 @@ server.get("/:template.:type", (req, res) => {
   const data = Object.assign({}, query, body);
 
   if (Email) {
-    const html = Oy.renderTemplate(
-      <Email {...data} />,
-      Email.options,
-      templateOptions => generateCustomTemplate(templateOptions),
-    );
+    try {
+      const html = Oy.renderTemplate(
+        <Email {...data} />,
+        Email.options,
+        templateOptions => generateCustomTemplate(templateOptions),
+      );
 
-    res.set("Cache-Control", "no-cache, no-store, must-revalidate");
-    res.set("Pragma", "no-cache");
-    res.set("Expires", "0");
-    res.send(html);
+      res.set("Cache-Control", "no-cache, no-store, must-revalidate");
+      res.set("Pragma", "no-cache");
+      res.set("Expires", "0");
+      res.send(html);
+    } catch (err) {
+      res.status(400);
+      res.send({error: err.message})
+    }
+
   } else {
     res.status(404);
     res.send({error: 'Template not found'})
