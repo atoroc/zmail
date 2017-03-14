@@ -1,8 +1,10 @@
+const brandColor = '#ff4e31'
+
 export default {
     width: '560px',
     fontFamily: "'Proxima Nova Soft','Proxima Nova','Avenir','Helvetica Neue','Helvetica',Arial,sans-serif",
     fontSize: '14px',
-    brandColor: '#ff4e31',
+    brandColor: brandColor,
 
     logo: {
         src: 'https://s3.amazonaws.com/lumi-assets/lumi-200bk.png'
@@ -18,6 +20,10 @@ export default {
         fontWeight: '200',
         fontSize: '37px',
         textAlign: 'center',
+    },
+
+    link: {
+        color: brandColor
     },
 
     button: {

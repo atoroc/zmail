@@ -3,6 +3,7 @@ import ResetPassword from './emails/resetPassword'
 import OrderCancellation from './emails/orderCancellation'
 import ShipmentConfirmation from './emails/shipmentConfirmation'
 import QuoteConfirmation from './emails/quoteConfirmation'
+import AbandonedCart from './emails/abandonedCart'
 
 export default {
     WelcomeUser,
@@ -10,4 +11,5 @@ export default {
     OrderCancellation,
     ShipmentConfirmation,
     QuoteConfirmation,
+    AbandonedCart,
 }
