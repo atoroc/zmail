@@ -5,17 +5,6 @@ import Header from '../components/header'
 import Content from '../components/content'
 import SocialLinks from '../components/social'
 import CTAButton from '../components/ctaButton'
-import {Table, TBody, TR, TD} from 'oy-vey';
-
-const productTableStyles = {
-    borderTop: '1px solid #e9e9e6',
-}
-
-const productTableTdStyles = {
-    height: '50px',
-    verticalAlign: 'middle',
-    borderBottom: '1px solid #e9e9e6'
-}
 
 export default class ShipmentConfirmation extends React.Component {
     static defaultProps = {
@@ -23,7 +12,7 @@ export default class ShipmentConfirmation extends React.Component {
         carrier: 'USPS',
         trackingUrl: 'http://yahoo.com',
         destinationCountry: 'UK',
-        estimatedDeliveryDate: 'Estimated Delivery Date',
+        estimatedDeliveryDate: 'estimated delivery date goes here',
         trackingNumbers: [
             {
                 trackingUrl: 'trackingUrlHere',
@@ -32,6 +21,7 @@ export default class ShipmentConfirmation extends React.Component {
         ],
         orderItems: [
             {
+                id: '0987654321',
                 value: {
                     thumbnailUrl: 'https://www.gravatar.com/avatar/2821f93cef33ccd01b1262ac41f87d9c?s=80',
                     orderItem: {
@@ -52,6 +42,7 @@ export default class ShipmentConfirmation extends React.Component {
                 }
             },
             {
+                id: '1234567890',
                 value: {
                     thumbnailUrl: 'https://www.gravatar.com/avatar/2821f93cef33ccd01b1262ac41f87d9c?s=80',
                     orderItem: {
@@ -104,11 +95,11 @@ export default class ShipmentConfirmation extends React.Component {
                         They are being shipped via {this.props.carrier} with tracking number(s):
                     </p>
 
-                    <ul>
+                    <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
                         {
                             this.props.trackingNumbers.map((number) => {
                                 return (
-                                    <li>
+                                    <li key={number.trackingNumber}>
                                         <a href={number.trackingUrl} style={{'color': styles.brandColor}}>
                                             {number.trackingNumber}
                                         </a>
@@ -116,7 +107,6 @@ export default class ShipmentConfirmation extends React.Component {
                                 )
                             })
                         }
-
                     </ul>
                 </div>
             )
@@ -151,16 +141,16 @@ export default class ShipmentConfirmation extends React.Component {
 
     renderOrderItems() {
         return (
-            <Table width="100%" style={productTableStyles}>
-                <TBody>
+            <table width="100%" style={styles.table}>
+                <tbody>
                 {
                     this.props.orderItems.map((item) => {
                         return (
-                            <TR>
-                                <TD align="center" style={productTableTdStyles}>
+                            <tr key={item.id}>
+                                <td align="center" style={styles.tableData}>
                                     <img src={item.value.thumbnailUrl} width="50" height="50" style={{ maxWidth: '50px', maxHeight: '50px', width: 'auto', marginTop: '4px'}} />
-                                </TD>
-                                <TD style={{...productTableTdStyles, ...{padding: '7px 7px 0'}}}>
+                                </td>
+                                <td style={{...styles.tableData, ...{padding: '7px 7px 0'}}}>
                                     <p style={styles.paragraph}>
                                         {item.value.orderItem.quantity}
                                         &nbsp;&times;&nbsp;
@@ -175,13 +165,13 @@ export default class ShipmentConfirmation extends React.Component {
                                         fontSize: '9px',
                                         color: '#898884'
                                     }}>{this.props.estimatedDeliveryDate}</p>
-                                </TD>
-                            </TR>
+                                </td>
+                            </tr>
                         )
                     })
                 }
-                </TBody>
-            </Table>
+                </tbody>
+            </table>
         )
     }
 

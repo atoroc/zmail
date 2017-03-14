@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../styles'
-import {Table, TBody, TR, TD} from 'oy-vey';
 
 const wrapper = {
     borderTop: '1px solid rgba(0, 0, 0, 0.1)',
@@ -15,16 +14,16 @@ const footer = {
 
 export default (props) => {
     return (
-        <Table width="100%">
-            <TBody>
-                <TR>
-                    <TD style={wrapper}>
+        <table width="100%">
+            <tbody>
+                <tr>
+                    <td style={wrapper}>
                         <div style={footer}>
                             Copyright 2017 Lumi, inc
                         </div>
-                    </TD>
-                </TR>
-            </TBody>
-        </Table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     )
 }

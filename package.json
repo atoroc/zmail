@@ -33,7 +33,7 @@
     "express": "^4.15.0",
     "lodash": "^4.17.4",
     "nodemon": "^1.11.0",
-    "oy-vey": "^0.8.0",
+    "oy-vey": "^1.0.0-alpha",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },

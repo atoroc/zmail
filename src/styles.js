@@ -45,5 +45,15 @@ export default {
        fontWeight: 'normal',
        fontSize: '14px',
        lineHeight: '1.6',
+    },
+
+    table: {
+        borderTop: '1px solid #e9e9e6',
+    },
+
+    tableData: {
+        height: '50px',
+        verticalAlign: 'middle',
+        borderBottom: '1px solid #e9e9e6'
     }
 }

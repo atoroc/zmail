@@ -5,7 +5,6 @@ import Header from '../components/header'
 import Content from '../components/content'
 import SocialLinks from '../components/social'
 import CTAButton from '../components/ctaButton'
-import {Table, TBody, TR, TD} from 'oy-vey';
 
 const appStyles = {
     backgroundColor: '#f7f6f5',
