@@ -85,12 +85,11 @@ class ResetPassword extends _react2.default.Component {
     }
 }
 exports.default = ResetPassword;
-ResetPassword.defaultProps = {
-    firstName: 'there',
-    resetLink: 'https://www.lumi.com/password-reset'
-};
 ResetPassword.options = {
     title: 'Password Reset Request',
     headCSS: 'body { background-color: #f7f6f5; }',
     previewText: 'Password Reset Request'
+};
+ResetPassword.propTypes = {
+    resetLink: _react2.default.PropTypes.string.isRequired
 };

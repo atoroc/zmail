@@ -12,15 +12,14 @@ const appStyles = {
 }
 
 export default class ResetPassword extends React.Component {
-    static defaultProps = {
-        firstName: 'there',
-        resetLink: 'https://www.lumi.com/password-reset'
-    }
-
     static options = {
         title: 'Password Reset Request',
         headCSS: 'body { background-color: #f7f6f5; }',
         previewText: 'Password Reset Request'
+    }
+
+    static propTypes = {
+        resetLink: React.PropTypes.string.isRequired
     }
 
     render() {
@@ -41,6 +40,6 @@ export default class ResetPassword extends React.Component {
                 </Content>
                 <SocialLinks />
             </Layout>
-        );
+        )
     }
 }
