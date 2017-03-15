@@ -14,7 +14,7 @@ npm install
 
 Lumi Email uses [Oy](https://github.com/revivek/oy), which provides some components to make it easier to build emails. You can use the built-in table components from Oy to create tables which are validated against email best practices. It also handles transclusion of the output into a base template.
 
-To create a new email, simply create a new React component inside a separate file. Give it a descriptive name like `welcomeEmail.js` and place it in `src/emails`.
+To create a new email, simply create a new React component inside a separate file. Give it a descriptive name like `welcomeEmail.js` and place it in `src/emails`. You can set any default `propTypes` which should be present, along with setting any `propType` validation. You may also specify options for Oy inside the static `options` property.
 
 ```js
 // welcomeEmail.js
@@ -25,20 +25,23 @@ import Header from '../components/header'
 import Content from '../components/content'
 import Footer from '../components/footer'
 
-const {Table, TBody, TR, TD} from 'oy-vey'
+export default class WelcomeUser extends React.Component {
+    static propTypes = {
+        firstName: React.PropTypes.string.isRequired
+    }
 
-const appStyles = {
-    backgroundColor: '#f7f6f5',
-    fontFamily: styles.fontFamily,
-}
-
-export default React.createClass({
+    static options = {
+        title: 'Welcome to Lumi!',
+        headCSS: 'body { background-color: #f7f6f5; }',
+        previewText: 'Welcome to Lumi!'
+    }
+    
     render() {
         return (
             <Layout>
                 <Header/>
                 <Content>
-                    Your Content Here!
+                    {this.props.firstName}
                 </Content>
                 <Footer/>
             </Layout>
@@ -51,33 +54,57 @@ export default React.createClass({
 
 ## Registering a New Email For Compilation
 
-To register a new email for compilation, place it inside of the `emails` array in `src/export.js`. You can also set extra parameters for the email, like `title`, `previewText`, and any extra CSS (like media queries) you would like included in `headCSS`:
+To register a new email for compilation, place it inside of `src/emails.js`. The name you choose here will be the endpoint for the email. For instance, if you choose `WelcomeEmail`, the route for the html version of the email will be at `/WelcomeEmail.html`.
 
 ```js
-//...
+import WelcomeEmail from './emails/welcomeEmail'
 
-const emails = [
-    {
-        component: <HelloWorldEmail />,
-        outputPath: './output/helloWorld.html',
-        options: {
-            title: 'Welcome to Lumi!',
-            headCSS: 'body { background-color: #f7f6f5; }',
-            previewText: 'Welcome to Lumi!'
-        }
-    },
-    //...
-]
-
-//...
+export default {
+    WelcomeEmail,
+}
 ```
 
-## Compiling Templates
+## Making Requests to Lumi Email
 
-To compile all of the templates, run `start` from the command line:
+Data for the email comes from two sources. If the request is JSON (`Content-Type: application/json`), the props of the component will be set using the body of the request. Likewise, if the request is a simple `POST` request, the encoded form data will be used.
+
+```js
+var config = {
+    headers: {'Content-Type': 'application/json; charset=utf-8'},
+    method: 'POST',
+    body: JSON.stringify(data)
+}
+
+return fetch('http://localhost:8887/WelcomeEmail.html', config)
+    .then(function(response) {
+        return response.text()
+    })
+    .then(function (html) {
+        // Send the email using `html`
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+
+```
+
+## Development Server
+
+Lumi Email comes with a development server. You can use a REST client like [Postman](https://www.getpostman.com/) or [Insomnia](https://insomnia.rest/) to test your emails.
+
+## Compiling For Production
+
+To compile Lumi Email for production, run `build` from the command line:
 
 ```bash
-npm run start
+npm run build
 ```
 
-This will output each template into the `output` folder.
+## Production Server
+
+To run the production version of Lumi Email, run `serve` from the command line:
+
+```bash
+npm run serve
+```
