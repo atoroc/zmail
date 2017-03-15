@@ -33,7 +33,7 @@ exports.default = props => {
                         _react2.default.createElement(
                             'a',
                             { href: 'http://lumi.com' },
-                            _react2.default.createElement('img', { src: _styles2.default.logo.src, width: '100', height: '34' })
+                            _react2.default.createElement('img', { src: _styles2.default.logo.src, width: 100, height: 34 })
                         )
                     )
                 )

@@ -42,22 +42,22 @@ exports.default = props => {
                         _react2.default.createElement(
                             'a',
                             { style: linkStyles, href: 'http://instagram.com/lumi', target: '_blank' },
-                            _react2.default.createElement('img', { src: 'https://s3.amazonaws.com/lumi-assets/social-60-insta-bg2.gif', width: '30', height: '30' })
+                            _react2.default.createElement('img', { src: 'https://s3.amazonaws.com/lumi-assets/social-60-insta-bg2.gif', width: 30, height: 30 })
                         ),
                         _react2.default.createElement(
                             'a',
                             { style: linkStyles, href: 'http://facebook.com/lumi', target: '_blank' },
-                            _react2.default.createElement('img', { src: 'https://s3.amazonaws.com/lumi-assets/social-60-fb-bg2.gif', width: '30', height: '30' })
+                            _react2.default.createElement('img', { src: 'https://s3.amazonaws.com/lumi-assets/social-60-fb-bg2.gif', width: 30, height: 30 })
                         ),
                         _react2.default.createElement(
                             'a',
                             { style: linkStyles, href: 'http://twitter.com/lumi', target: '_blank' },
-                            _react2.default.createElement('img', { src: 'https://s3.amazonaws.com/lumi-assets/social-60-twitter-bg2.gif', width: '30', height: '30' })
+                            _react2.default.createElement('img', { src: 'https://s3.amazonaws.com/lumi-assets/social-60-twitter-bg2.gif', width: 30, height: 30 })
                         ),
                         _react2.default.createElement(
                             'a',
                             { href: 'http://pinterest.com/lumi', target: '_blank' },
-                            _react2.default.createElement('img', { src: 'https://s3.amazonaws.com/lumi-assets/social-60-pinterest-bg2.gif', width: '30', height: '30' })
+                            _react2.default.createElement('img', { src: 'https://s3.amazonaws.com/lumi-assets/social-60-pinterest-bg2.gif', width: 30, height: 30 })
                         )
                     )
                 )
