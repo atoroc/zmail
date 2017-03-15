@@ -27,7 +27,7 @@ console.error = function propErrorHandler (...args) {
   }
 }
 
-server.get("/:template.:type", (req, res) => {
+server.post("/:template.:type", (req, res) => {
   const Email = emails[req.params.template]
 
   const { query, body } = req;
