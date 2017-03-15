@@ -75,7 +75,7 @@ var config = {
     body: JSON.stringify(data)
 }
 
-return fetch('http://localhost:8887/WelcomeEmail.html', config)
+fetch('http://localhost:8887/WelcomeEmail.html', config)
     .then(function(response) {
         return response.text()
     })
