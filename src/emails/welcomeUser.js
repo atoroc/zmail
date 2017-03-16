@@ -13,7 +13,7 @@ const appStyles = {
 
 export default class WelcomeUser extends React.Component {
     static defaultProps = {
-        firstName: 'there'
+        firstName: 'there',
     }
 
     static options = {
@@ -22,13 +22,17 @@ export default class WelcomeUser extends React.Component {
         previewText: 'Welcome to Lumi!'
     }
 
+    static propTypes = {
+        accountLink: React.PropTypes.string.isRequired
+    }
+
     render () {
         return (
             <Layout>
                 <Header />
                 <Content>
                     <h2 style={styles.h1}>Welcome to Lumi!</h2>
-                    <CTAButton href={'http://lumi.com/account'} buttonText={'View your account'} />
+                    <CTAButton href={this.props.accountLink} buttonText={'View your account'} />
                     <p style={styles.paragraph}>Hey {this.props.firstName}!</p>
                     <p style={styles.paragraph}>Thanks for joining Lumi. We're working hard to add new ways you can turn your logo and digital designs into physical things. If you have any suggestions don't hesitate to reply.</p>
                     <p style={styles.paragraph}>We're also regularly posting news and inspirational images on Instagram. We'd love to see you there <a style={{color: styles.brandColor}} href="https://instagram.com/lumi/">instagram.com/lumi</a>.</p>

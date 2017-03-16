@@ -54,7 +54,7 @@ class WelcomeUser extends _react2.default.Component {
                     { style: _styles2.default.h1 },
                     'Welcome to Lumi!'
                 ),
-                _react2.default.createElement(_ctaButton2.default, { href: 'http://lumi.com/account', buttonText: 'View your account' }),
+                _react2.default.createElement(_ctaButton2.default, { href: this.props.accountLink, buttonText: 'View your account' }),
                 _react2.default.createElement(
                     'p',
                     { style: _styles2.default.paragraph },
@@ -98,4 +98,7 @@ WelcomeUser.options = {
     title: 'Welcome to Lumi!',
     headCSS: _styles2.default.headCSS,
     previewText: 'Welcome to Lumi!'
+};
+WelcomeUser.propTypes = {
+    accountLink: _react2.default.PropTypes.string.isRequired
 };
