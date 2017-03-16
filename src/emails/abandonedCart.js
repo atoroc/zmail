@@ -14,7 +14,7 @@ const appStyles = {
 export default class AbandonedCart extends React.Component {
     static options = {
         title: "Welcome to Lumi!",
-        headCSS: "body { background-color: #f7f6f5; }",
+        headCSS: styles.headCSS,
         previewText: "Welcome to Lumi!",
     }
 

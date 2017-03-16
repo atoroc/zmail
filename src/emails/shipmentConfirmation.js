@@ -19,7 +19,7 @@ export default class ShipmentConfirmation extends React.Component {
 
     static options = {
         title: 'Your order has shipped!',
-        headCSS: 'body { background-color: #f7f6f5; }',
+        headCSS: styles.headCSS,
         previewText: 'Your order has shipped!'
     }
 

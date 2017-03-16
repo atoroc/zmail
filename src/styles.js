@@ -6,6 +6,8 @@ export default {
     fontSize: '14px',
     brandColor: brandColor,
 
+    headCSS: 'body { background-color: #f7f6f5; color: #484542; }',
+
     logo: {
         src: 'https://s3.amazonaws.com/lumi-assets/lumi-200bk.png'
     },

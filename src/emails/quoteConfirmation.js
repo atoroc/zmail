@@ -21,7 +21,7 @@ export default class QuoteConfirmation extends React.Component {
 
     static options = {
         title: 'Welcome to Lumi!',
-        headCSS: 'body { background-color: #f7f6f5 }',
+        headCSS: s.headCSS,
         previewText: 'Welcome to Lumi!'
     }
 

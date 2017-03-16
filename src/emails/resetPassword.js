@@ -14,7 +14,7 @@ const appStyles = {
 export default class ResetPassword extends React.Component {
     static options = {
         title: 'Password Reset Request',
-        headCSS: 'body { background-color: #f7f6f5; }',
+        headCSS: styles.headCSS,
         previewText: 'Password Reset Request'
     }
 
