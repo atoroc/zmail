@@ -199,6 +199,6 @@ ShipmentConfirmation.propTypes = {
 };
 ShipmentConfirmation.options = {
     title: 'Your order has shipped!',
-    headCSS: 'body { background-color: #f7f6f5; }',
+    headCSS: _styles2.default.headCSS,
     previewText: 'Your order has shipped!'
 };

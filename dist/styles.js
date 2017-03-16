@@ -11,6 +11,8 @@ exports.default = {
     fontSize: '14px',
     brandColor: brandColor,
 
+    headCSS: 'body { background-color: #f7f6f5; color: #484542; }',
+
     logo: {
         src: 'https://s3.amazonaws.com/lumi-assets/lumi-200bk.png'
     },
@@ -25,6 +27,28 @@ exports.default = {
         fontWeight: '200',
         fontSize: '37px',
         textAlign: 'center'
+    },
+
+    boxHeading: {
+        fontWeight: 'normal',
+        color: '#898884',
+        textAlign: 'center',
+        textTransform: 'uppercase',
+        letterSpacing: '0.15em',
+        fontSize: '12px'
+    },
+
+    boxStyles: {
+        fontWeight: 'normal',
+        fontSize: '14px',
+        lineHeight: 1.6,
+        border: '1px solid #e9e9e6',
+        WebkitBorderRadius: '4px',
+        MozBorderRadius: '4px',
+        msBorderRadius: '4px',
+        borderRadius: '4px',
+        margin: '0 7px 0 0',
+        padding: '15px'
     },
 
     link: {
@@ -56,6 +80,11 @@ exports.default = {
         fontWeight: 'normal',
         fontSize: '14px',
         lineHeight: '1.6'
+    },
+
+    paragraphSmall: {
+        fontSize: '9px',
+        color: '#898884'
     },
 
     table: {

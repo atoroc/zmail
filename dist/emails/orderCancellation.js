@@ -34,11 +34,6 @@ var _ctaButton2 = _interopRequireDefault(_ctaButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const appStyles = {
-    backgroundColor: '#f7f6f5',
-    fontFamily: _styles2.default.fontFamily
-};
-
 class OrderCancellation extends _react2.default.Component {
 
     render() {
@@ -113,6 +108,6 @@ OrderCancellation.defaultProps = {
 };
 OrderCancellation.options = {
     title: 'Your order has been cancelled.',
-    headCSS: 'body { background-color: #f7f6f5; }',
+    headCSS: _styles2.default.headCSS,
     previewText: 'Your order has been cancelled.'
 };

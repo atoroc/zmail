@@ -37,7 +37,7 @@ const EmptySpace = props => {
 };
 
 EmptySpace.defaultProps = {
-  height: '16'
+  height: '30'
 };
 
 exports.default = EmptySpace;

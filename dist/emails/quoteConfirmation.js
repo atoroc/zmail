@@ -245,7 +245,7 @@ QuoteConfirmation.defaultProps = {
 };
 QuoteConfirmation.options = {
     title: 'Welcome to Lumi!',
-    headCSS: 'body { background-color: #f7f6f5 }',
+    headCSS: _styles2.default.headCSS,
     previewText: 'Welcome to Lumi!'
 };
 QuoteConfirmation.propTypes = {

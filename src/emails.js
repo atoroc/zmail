@@ -5,6 +5,7 @@ import ShipmentConfirmation from './emails/shipmentConfirmation'
 import QuoteConfirmation from './emails/quoteConfirmation'
 import AbandonedCart from './emails/abandonedCart'
 import OrderConfirmation from './emails/orderConfirmation'
+import Export from './emails/export'
 
 export default {
     WelcomeUser,
@@ -14,4 +15,5 @@ export default {
     QuoteConfirmation,
     AbandonedCart,
     OrderConfirmation,
+    Export,
 }

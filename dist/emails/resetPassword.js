@@ -87,7 +87,7 @@ class ResetPassword extends _react2.default.Component {
 exports.default = ResetPassword;
 ResetPassword.options = {
     title: 'Password Reset Request',
-    headCSS: 'body { background-color: #f7f6f5; }',
+    headCSS: _styles2.default.headCSS,
     previewText: 'Password Reset Request'
 };
 ResetPassword.propTypes = {

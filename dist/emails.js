@@ -28,6 +28,14 @@ var _abandonedCart = require('./emails/abandonedCart');
 
 var _abandonedCart2 = _interopRequireDefault(_abandonedCart);
 
+var _orderConfirmation = require('./emails/orderConfirmation');
+
+var _orderConfirmation2 = _interopRequireDefault(_orderConfirmation);
+
+var _export = require('./emails/export');
+
+var _export2 = _interopRequireDefault(_export);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -36,5 +44,7 @@ exports.default = {
     OrderCancellation: _orderCancellation2.default,
     ShipmentConfirmation: _shipmentConfirmation2.default,
     QuoteConfirmation: _quoteConfirmation2.default,
-    AbandonedCart: _abandonedCart2.default
+    AbandonedCart: _abandonedCart2.default,
+    OrderConfirmation: _orderConfirmation2.default,
+    Export: _export2.default
 };
