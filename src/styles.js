@@ -24,6 +24,28 @@ export default {
         textAlign: 'center',
     },
 
+    boxHeading: {
+        fontWeight: 'normal',
+        color: '#898884',
+        textAlign: 'center',
+        textTransform: 'uppercase',
+        letterSpacing: '0.15em',
+        fontSize: '12px',
+    },
+
+    boxStyles: {
+        fontWeight: 'normal',
+        fontSize: '14px',
+        lineHeight: 1.6,
+        border: '1px solid #e9e9e6',
+        WebkitBorderRadius: '4px',
+        MozBorderRadius: '4px',
+        msBorderRadius: '4px',
+        borderRadius: '4px',
+        margin: '0 7px 0 0',
+        padding: '15px',
+    },
+
     link: {
         color: brandColor
     },
@@ -53,6 +75,11 @@ export default {
        fontWeight: 'normal',
        fontSize: '14px',
        lineHeight: '1.6',
+    },
+
+    paragraphSmall: {
+        fontSize: '9px',
+        color: '#898884'
     },
 
     table: {
