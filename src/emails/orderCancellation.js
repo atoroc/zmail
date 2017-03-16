@@ -6,11 +6,6 @@ import Content from '../components/content'
 import SocialLinks from '../components/social'
 import CTAButton from '../components/ctaButton'
 
-const appStyles = {
-    backgroundColor: '#f7f6f5',
-    fontFamily: styles.fontFamily,
-}
-
 export default class OrderCancellation extends React.Component {
     static defaultProps = {
         orderNumber: '13579',
