@@ -1,18 +1,18 @@
-# Lumi Email
+# Zmail
 
 ## Setup / Install
 
 To get started, clone the repo and install its dependencies:
 
 ```bash
-git clone https://github.com/lumihq/lumi-email.git
+git clone https://github.com/davidhemphill/zmail.git
 
 npm install
 ```
 
 ## Creating New Emails
 
-Lumi Email uses [Oy](https://github.com/revivek/oy), which provides some components to make it easier to build emails. You can use the built-in table components from Oy to create tables which are validated against email best practices. It also handles transclusion of the output into a base template.
+Zmail uses [Oy](https://github.com/revivek/oy), which provides some components to make it easier to build emails. You can use the built-in table components from Oy to create tables which are validated against email best practices. It also handles transclusion of the output into a base template.
 
 To create a new email, simply create a new React component inside a separate file. Give it a descriptive name like `welcomeEmail.js` and place it in `src/emails`. You can set any default `propTypes` which should be present, along with setting any `propType` validation. You may also specify options for Oy inside the static `options` property.
 
@@ -31,9 +31,9 @@ export default class WelcomeUser extends React.Component {
     }
 
     static options = {
-        title: 'Welcome to Lumi!',
+        title: 'Hello World!',
         headCSS: 'body { background-color: #f7f6f5; }',
-        previewText: 'Welcome to Lumi!'
+        previewText: 'Hello World!'
     }
     
     render() {
@@ -64,7 +64,7 @@ export default {
 }
 ```
 
-## Making Requests to Lumi Email
+## Making Requests to Zmail
 
 Data for the email comes from two sources. If the request is JSON (`Content-Type: application/json`), the props of the component will be set using the body of the request. Likewise, if the request is a simple `POST` request, the encoded form data will be used.
 
@@ -91,11 +91,11 @@ fetch('http://localhost:8887/WelcomeEmail.html', config)
 
 ## Development Server
 
-Lumi Email comes with a development server. You can use a REST client like [Postman](https://www.getpostman.com/) or [Insomnia](https://insomnia.rest/) to test your emails.
+Zmail comes with a development server. You can use a REST client like [Postman](https://www.getpostman.com/) or [Insomnia](https://insomnia.rest/) to test your emails.
 
 ## Compiling For Production
 
-To compile Lumi Email for production, run `build` from the command line:
+To compile Zmail for production, run `build` from the command line:
 
 ```bash
 npm run build
@@ -103,7 +103,7 @@ npm run build
 
 ## Production Server
 
-To run the production version of Lumi Email, run `serve` from the command line:
+To run the production version of Zmail, run `serve` from the command line:
 
 ```bash
 npm run serve
